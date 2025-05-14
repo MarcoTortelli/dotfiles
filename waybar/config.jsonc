@@ -1,0 +1,65 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["hyprland/workspaces", "mpris"],
+  "modules-center": ["clock"],
+  "modules-right": ["tray", "network", "pulseaudio", "backlight", "battery"],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+  },
+  "clock": {
+    "format": " {:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}",
+  },
+  "network": {
+    "format-wifi": "  ", // Ícone Wi-Fi
+    "format-ethernet": "", // Ícone Ethernet (fa-network-wired)
+    "format-disconnected": "", // Ícone de alerta (sem rede)
+    "interval": 3,
+    "tooltip": true,
+    "on-click": "kitty -e nmtui",
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", ""],
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "ignored-sinks": ["Easy Effects Sink"],
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}  {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": true,
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8,
+  },
+  "mpris": {
+    "format": "{player_icon}  {artist} - {title}",
+    "max-length": 40,
+    "player-icons": {
+      "spotify": "", // ícone Nerd Font
+      "default": "",
+    },
+    "tooltip": true,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}  {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "scroll-step": 5,
+  },
+}
