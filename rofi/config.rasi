@@ -1,0 +1,84 @@
+configuration {
+    /* Define os modos que você usa */
+    modi: "drun,run,window";
+    /* Formato limpo, apenas o nome do app */
+    drun-display-format: "{name}";
+    /* Desativar ícones para minimalismo extremo (ou mude para true se preferir) */
+    show-icons: false;
+    /* Fonte sugerida (ajuste para a sua preferida, ex: JetBrains Mono, Inter) */
+    font: "JetBrains Mono Medium 12";
+    
+    display-drun:"";
+    display-window:"";
+
+}
+
+* {
+    /* Paleta de Cores */
+    bg: #000000;      /* Fundo Preto Puro */
+    fg: #FFFFFF;      /* Texto Branco Puro */
+    sel-bg: #FFFFFF;  /* Seleção Branca */
+    sel-fg: #000000;  /* Texto da Seleção Preto (Invertido) */
+    
+    /* Configurações Globais */
+    background-color: @bg;
+    text-color: @fg;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    spacing: 0px;
+}
+
+window {
+    width: 35%;          /* Largura da janela */
+    padding: 20px;       /* Espaçamento interno */
+    border: 1px;         /* Borda fina (opcional) */
+    border-color: @fg;   /* Borda branca */
+    location: center;    /* Centralizado na tela */
+    anchor: center;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    padding: 10px 0px 20px 0px; /* Espaço abaixo da barra de busca */
+    children: [ prompt, entry ];
+}
+
+prompt {
+    /* O texto antes do cursor (ex: "Run:") */
+    text-color: @fg;
+    padding: 0px 10px 0px 0px;
+    font: "JetBrains Mono Bold 12";
+}
+
+entry {
+    /* Onde você digita */
+    text-color: @fg;
+}
+
+listview {
+    lines: 8;            /* Quantos itens aparecem */
+    columns: 1;          /* Uma coluna */
+    scrollbar: false;    /* Sem barra de rolagem */
+    fixed-height: false;
+}
+
+element {
+    padding: 10px;       /* Altura de cada item */
+    text-color: @fg;
+}
+
+element selected {
+    background-color: @sel-bg; /* Fundo branco ao selecionar */
+    text-color: @sel-fg;       /* Texto preto ao selecionar */
+}
+
+element-text {
+    /* Garante que o texto herde as cores do elemento pai */
+    background-color: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
+}

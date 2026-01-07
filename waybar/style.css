@@ -1,0 +1,76 @@
+/* Reset Global */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Roboto Mono", monospace;
+    font-size: 14px;
+    min-height: 0;
+}
+
+/* Barra Principal */
+window#waybar {
+    background-color: #000000;
+    color: #ffffff;
+    /* Linha sutil embaixo para separar do resto da tela */
+  
+}
+
+/* Niri Workspaces - Apenas números */
+
+#workspaces button {
+    padding: 0 10px;
+    background: transparent;
+    color: #666666; /* Inativos: Cinza escuro para contraste */
+    transition: color 0.2s;
+}
+
+#workspaces button.active {
+    color: #ffffff; /* Ativo: Branco puro */
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background: #111111;
+}
+
+#mpris {
+    color: #1db954; /* Verde Spotify */
+    padding: 0 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+#mpris.paused {
+    color: #a6adc8; /* Cor cinza quando pausado */
+}
+
+/* --- MÓDULOS GERAIS --- */
+#clock,
+#backlight,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 15px;
+    color: #eeeeee;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+/* Alertas de Bateria */
+#battery.warning {
+    color: #ffa500;
+}
+
+#battery.critical {
+    color: #ff0000;
+}
+#battery.charging {
+    color: #00ff00
+}
+
