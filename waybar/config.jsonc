@@ -3,32 +3,28 @@
     "position": "top",
     "height": 30,
     "spacing": 0,
-
     "modules-left": [
         "niri/workspaces",
-    	"mpris"
+        "mpris"
     ],
-
     "modules-center": [
         "clock"
     ],
-
     "modules-right": [
-        "network",    
-	"pulseaudio",
-	"backlight",
-	"cpu",
+        "bluetooth",
+        "network",
+        "pulseaudio",
+        "backlight",
+        "cpu",
         "memory",
         "battery",
         "tray"
     ],
-
-
     //ESQUERDA
-   "niri/workspaces": {
+    "niri/workspaces": {
         "format": "{icon}",
         "format-icons": {
-	    "1": "1",
+            "1": "1",
             "2": "2",
             "3": "3",
             "4": "4",
@@ -37,60 +33,60 @@
             "7": "7",
             "8": "8",
             "9": "9",
-            
-            "active": "●", 
-            "default": "○" 
+            "active": "●",
+            "default": "○"
         }
     },
-
     "mpris": {
-	"format": "{player_icon} {artist} - {title}",
-	"format-paused": "{player_icon} {artist} - {title}",
-	"player": "spotifyd",
-	"player-icons": {
+        "format": "{player_icon} {artist} - {title}",
+        "format-paused": "{player_icon} {artist} - {title}",
+        "player": "spotifyd",
+        "player-icons": {
             "default": "",
             "spotifyd": ""
         },
-        "ignored-players": ["firefox", "chromium"]
+        "ignored-players": [
+            "firefox",
+            "chromium"
+        ]
     },
-
-
-	
     //CENTRO
     "clock": {
         "format": "{:%H:%M}",
         "tooltip-format": "{:%d/%m/%Y}"
     },
-
-
     //DIREITA
-
-    "network":{
-	"format": "{ifname}",
-	"format-wifi": "{essid} ({signalStrength}%)",
-	"format-ethernet": "{ipaddr}/{cidr}",
-	"format-disconnected": "DISCONNECTED",
-    	"on-click": "alacritty --class=float_nmtui -e nmtui"
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "", // Fica vazio (invisível) quando desativado
+        "format-connected": "{device_alias}",
+        "tooltip-format": "{status}"
     },
-
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "format-disconnected": "DISCONNECTED",
+        "on-click": "alacritty --class=float_nmtui -e nmtui",
+        "on-click-right": "alacritty --class=float_bluetui -e bluetui"
+    },
     "backlight": {
-	    "format": "BRI {percent}%"
+        "format": "BRI {percent}%"
     },
     "cpu": {
         "format": "CPU {usage}%",
         "interval": 10
     },
-
     "memory": {
         "format": "RAM {}%",
         "interval": 10
     },
-
     "pulseaudio": {
         "format": "VOL {volume}%",
+        "format-bluetooth": "VOL {volume}%",
         "format-muted": "MUTE",
-        "on-click": "alacritty --class float_wiremix -e wiremix" },
-
+        "on-click": "alacritty --class float_wiremix -e wiremix"
+    },
     "battery": {
         "format": "BAT {capacity}%",
         "format-charging": "CHG {capacity}%",
@@ -99,7 +95,6 @@
             "critical": 15
         }
     },
-
     "tray": {
         "icon-size": 18,
         "spacing": 10

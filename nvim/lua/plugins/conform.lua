@@ -9,6 +9,8 @@ return {
 			typescript = { "biome" },
 			html = { "prettier" },
 			css = { "prettier" },
+			markdown = { "prettier" },
+			json = { "biome" },
 		},
 		format_on_save = {
 			lsp_fallback = true,

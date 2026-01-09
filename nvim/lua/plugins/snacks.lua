@@ -1,4 +1,5 @@
 return {
+
 	{
 		"folke/snacks.nvim",
 		priority = 1000,
@@ -227,6 +228,21 @@ return {
 					Snacks.picker.todo_comments({ keyword = { "TODO", "FIX", "FIXME" } })
 				end,
 				desc = "Todo/Fix/Fixme",
+			},
+		},
+	},
+	-- lazy.nvim
+	{
+		"folke/snacks.nvim",
+		opts = {},
+		keys = {
+			{
+				"<C-t>",
+				function()
+					Snacks.terminal.toggle()
+				end,
+				mode = { "n", "t" },
+				desc = "Toggle Terminal",
 			},
 		},
 	},

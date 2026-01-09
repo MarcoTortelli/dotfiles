@@ -28,9 +28,9 @@ vim.opt.background = "dark"
 vim.scrolloff = 8
 vim.signcolumn = "yes"
 
-vim.opt.backspace = {"start", "eol", "indent"}
+vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.clipboard = ("unnamedplus")
+vim.opt.clipboard = "unnamedplus"
 vim.g.editorconfig = true
