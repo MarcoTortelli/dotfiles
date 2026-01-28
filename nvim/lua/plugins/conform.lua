@@ -5,12 +5,14 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "black" },
-			javascript = { "biome" },
-			typescript = { "biome" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
 			html = { "prettier" },
 			css = { "prettier" },
 			markdown = { "prettier" },
-			json = { "biome" },
+			json = { "prettier" },
+			cpp = { "clang-format" },
+			c = { "clang-format" },
 		},
 		format_on_save = {
 			lsp_fallback = true,

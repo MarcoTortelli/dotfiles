@@ -109,7 +109,7 @@ return {
 			{
 				"<leader><space>",
 				function()
-					Snacks.picker.smart()
+					Snacks.picker.files()
 				end,
 				desc = "Smart Find (Files/Buffers/Recent)",
 			},
@@ -243,6 +243,31 @@ return {
 				end,
 				mode = { "n", "t" },
 				desc = "Toggle Terminal",
+			},
+			{
+				"<leader>cpp",
+				function()
+					vim.cmd("write")
+
+					-- Pega os nomes dos arquivos
+					local dir = vim.fn.expand("%:p:h") -- Pasta do arquivo
+					local file = vim.fn.expand("%:t") -- Nome do arquivo (ex: main.cpp)
+					local output = vim.fn.expand("%:t:r") -- Nome sem extensão (ex: main)
+
+					-- O comando agora faz:
+					-- 1. Entra na pasta (cd)
+					-- 2. Compila
+					-- 3. Roda o executável localmente (./)
+					local cmd = string.format("cd '%s' && g++ '%s' -o '%s' && ./'%s'", dir, file, output, output)
+
+					-- Usando a função específica do Snacks para rodar comandos
+					Snacks.terminal.open(cmd, {
+						win = {
+							style = "float",
+							border = "rounded",
+						},
+					})
+				end,
 			},
 		},
 	},
