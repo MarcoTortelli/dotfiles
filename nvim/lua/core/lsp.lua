@@ -1,3 +1,4 @@
+---@meta
 vim.diagnostic.config({
 	-- virtual_lines = true,
 	virtual_text = true,
@@ -21,3 +22,5 @@ vim.diagnostic.config({
 		},
 	},
 })
+
+local lspconfig = require("lspconfig")

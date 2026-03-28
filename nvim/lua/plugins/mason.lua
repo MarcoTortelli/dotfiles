@@ -2,9 +2,7 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = {
-
-			},
+			ensure_installed = {},
 		},
 		dependencies = {
 			{
@@ -32,14 +30,13 @@ return {
 				"black",
 				"pylint",
 				"eslint_d",
-								"ts_ls",
+				"ts_ls",
 				"html",
 				"cssls",
 				"tailwindcss",
 				"svelte",
 				"lua_ls",
 				"graphql",
-				"emmet_ls",
 				"prismals",
 				"pyright",
 				"eslint",
